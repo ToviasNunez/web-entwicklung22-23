@@ -1,0 +1,194 @@
+
+#navigation {
+  display: flex;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.navigation label{
+	font-size: 20px;
+	display: none;
+	cursor: pointer;
+	color: #cdbfa1;
+}
+
+.navigation #btn-menu{
+  display: none;
+}
+
+
+.navigation{
+  display: block;
+}
+
+.navigation .post-logo{
+  color: var(--color-2);
+  font-family: var(--font-1);
+  font-size: 30px;
+  font-weight: bold;
+  width: 85%;
+  text-align: left;
+}
+
+.navigation .post-logo a{
+  text-decoration: none;
+}
+
+ .navigation .userName {
+   padding: 0px 45px 0px 0px;
+  list-style: none;
+  width: 20%;
+  margin: 0;
+  text-align: center;
+
+}
+
+.navigation .userName li{
+  text-align: left;
+  width: 15%;
+  padding: 0 0 0 38px;
+}
+.navigation .userName a{
+
+   font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-1);
+   color: #fff;
+   text-decoration: none;
+}
+
+.navigation .navbar{
+  list-style: none;
+  width: 50%;
+  margin: 0;
+  text-align: center;
+
+}
+
+.navigation .navbar li{
+  text-align: left;
+  width: 50%;
+  padding: 0 0 0 48px;
+}
+
+.navigation .navbar li a{
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-1);
+   color: #fff;
+   text-decoration: none;
+}
+
+mat-toolbar{
+  background: #24262b;
+}
+
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+
+/*------ hover ---------*/
+.navigation .post a:hover{
+  color: var(--color-1);
+  transition:all 0.2s ease-in-out;
+}
+
+.navigation .navbar li a:hover{
+   color: var(--color-2);
+   transition:all 0.2s ease-in-out;
+}
+
+.navigation .navbar li:hover{
+  background-color: rgba(255, 255, 255, 0.075);
+  border-left: 1px solid var(--color-2);
+  transition:all 0.2s ease-in-out;
+}
+
+/* ======== MEDIA QUERY PHONE ============== */
+
+@media(max-width: 600px){
+
+    mat-toolbar{
+      background-color: #24262b;
+      flex-wrap: wrap;
+      height: 100px;
+    }
+
+    #navigation{
+      background-color:  #24262b;;
+      width: 100%;
+    }
+
+    .navigation .post-logo{
+      font-size: 25px;
+      width: 90px;
+    }
+
+    .navigation label{
+      display: block;
+      width: 10px;
+      padding: 5px 0 0 70%;
+    }
+
+    .navigation .userName{
+      width: 10%;
+      position: absolute;
+      top:auto;
+      left: 30%;
+    }
+
+    .navigation .userName li{
+      width: 50%;
+      margin: 0 auto;
+      font-size: 16px;
+    }
+
+    .navigation .userName li a{
+      font-size: 16px;
+    }
+
+    .navigation .navbar{
+        width: 100%;
+        top: 100%;
+        left: 0;
+        position: absolute;
+        flex-direction: column;
+        background: rgba(0,0,0,0.5);
+        transform: translateX(-200%);
+        transition: all 0.8s;
+        z-index: 1;
+    }
+
+      .navigation .navbar li{
+        width: 100%;
+        height: 56px;
+        padding: 0 0 0 20px;
+      }
+
+      .navigation .navbar li a{
+        font-size: 18px;
+        text-align: center;
+        margin: 0px;
+      }
+
+      #btn-menu:checked ~ .navbar{
+        transform: translateY(0%);
+    }
+}

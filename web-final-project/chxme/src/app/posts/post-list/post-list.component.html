@@ -1,0 +1,69 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div>
+  <input
+    class="form-control"
+    type="text"
+    name="search"
+    inputText
+    [(ngModel)]="searchPost"
+    autocomplete="off"
+    placeholder="Search Post"
+  />
+</div>
+<mat-accordion multi="true" *ngIf="posts.length > 0 && !isLoading">
+  <mat-expansion-panel
+    *ngFor="let post of this.posts | filter : searchPost"
+    class="text"
+  >
+    <mat-expansion-panel-header class="prueba">
+      <p>
+        <span style="font-weight: 500"
+          >{{ post.country }} {{ "-" }} {{ post.city }}</span
+        >{{ ":" }}
+        <span style="font-weight: 300">{{ post.topic }}</span>
+        <ngb-rating
+          [max]="5"
+          [(rate)]="post.rate"
+          [readonly]="true"
+        ></ngb-rating>
+      </p>
+    </mat-expansion-panel-header>
+
+    <div class="row">
+      <div class="column">
+        <div class="post-image">
+          <img [src]="post.imagePath" [alt]="post.country" />
+        </div>
+      </div>
+
+      <div class="column">
+        <p class="subtitel"><strong>Subtitel: </strong>{{ post.subtitel }}</p>
+        <p class="content">{{ post.content }}</p>
+        <p class="author">
+          <strong> <span class="createby"> Created By:</span></strong
+          ><i>{{ post.author }}</i>
+          {{ post.date }}
+        </p>
+      </div>
+    </div>
+
+    <mat-action-row
+      *ngIf="userIsAuthenticated && userId === post.creator"
+      class="btn"
+    >
+      <a mat-button [routerLink]="['/edit', post.id]">edit</a>
+      <button mat-button (click)="onDelete(post.id)">Deleted</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<mat-paginator
+  [length]="totalPosts"
+  [pageSize]="postPerPage"
+  [pageSizeOptions]="pageSizeOption"
+  (page)="onChangedPage($event)"
+  *ngIf="posts.length > 0"
+></mat-paginator>
+<p class="info-text mat-boddy-1" *ngIf="posts.length <= 0 && !isLoading">
+  No post added yet!
+</p>
