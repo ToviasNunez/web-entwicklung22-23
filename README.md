@@ -1,4 +1,18 @@
+
 # 🌍 TravelLens (Posts App)
+
+## 🚀 Demo
+
+You can try the live demo here: [🌐 https://toviasnunez.github.io/web-entwicklung22-23/](https://toviasnunez.github.io/web-entwicklung22-23/)
+
+This project includes a demo mode that allows the application to run without a database.
+
+👉 The demo showcases:
+* Example travel posts
+* UI and user experience
+* Core functionality without backend dependency
+
+---
 
 ## 📌 Overview
 
