@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments';
 const BACKEND_URL = environment.apiURL + '/posts/'; // global
+const DEMO_POSTS_URL = 'assets/demo-posts.json';
 
 @Injectable({
   providedIn: 'root',
@@ -23,41 +24,68 @@ export class PostsService {
    * later can used for to indentifie the post and edite o delete
    */
   getPosts(postsPerPage: number, currentPage: number) {
-    const queryParams = `?pagesize=${postsPerPage}&page=${currentPage}`;
-    this.http
-      .get<{ message: string; posts: any; maxPost: number }>(
-        BACKEND_URL + queryParams
-      )
-      .pipe(
-        map((postData) => {
-          return {
-            posts: postData.posts.map((post: any) => {
-              return {
-                id: post._id,
-                country: post.country,
-                city: post.city,
-                topic: post.topic,
-                rate: post.rate,
-                imagePath: post.imagePath,
-                content: post.content,
-                subtitel: post.subtitel,
-                date: post.date,
-                creator: post.creator, // getting this information from the serve creator id
-                author: post.author,
-              };
-            }),
-            maxPosts: postData.maxPost,
-          };
-        })
-      )
-      .subscribe((transformedPostsData) => {
-        // console.log(transformedPostsData);
-        this.posts = transformedPostsData.posts;
+    if (environment.demoMode) {
+      // Demo-Modus: Lade Daten aus assets/demo-posts.json
+      this.http.get<any[]>(DEMO_POSTS_URL).subscribe((demoPosts) => {
+        // Simuliere Paginierung
+        const start = (currentPage - 1) * postsPerPage;
+        const end = start + postsPerPage;
+        const pagedPosts = demoPosts.slice(start, end).map((post: any) => ({
+          id: post.id || post._id,
+          country: post.country,
+          city: post.city,
+          topic: post.topic,
+          rate: post.rate,
+          imagePath: post.imagePath,
+          content: post.content,
+          subtitel: post.subtitel,
+          date: post.date,
+          creator: post.creator,
+          author: post.author,
+        }));
+        this.posts = pagedPosts;
         this.postsUpdated.next({
           posts: [...this.posts],
-          postCount: transformedPostsData.maxPosts,
+          postCount: demoPosts.length,
         });
       });
+    } else {
+      // Normaler Modus: Lade Daten vom Backend
+      const queryParams = `?pagesize=${postsPerPage}&page=${currentPage}`;
+      this.http
+        .get<{ message: string; posts: any; maxPost: number }>(
+          BACKEND_URL + queryParams
+        )
+        .pipe(
+          map((postData) => {
+            return {
+              posts: postData.posts.map((post: any) => {
+                return {
+                  id: post._id,
+                  country: post.country,
+                  city: post.city,
+                  topic: post.topic,
+                  rate: post.rate,
+                  imagePath: post.imagePath,
+                  content: post.content,
+                  subtitel: post.subtitel,
+                  date: post.date,
+                  creator: post.creator, // getting this information from the serve creator id
+                  author: post.author,
+                };
+              }),
+              maxPosts: postData.maxPost,
+            };
+          })
+        )
+        .subscribe((transformedPostsData) => {
+          this.posts = transformedPostsData.posts;
+          this.postsUpdated.next({
+            posts: [...this.posts],
+            postCount: transformedPostsData.maxPosts,
+          });
+        });
+    }
   }
   /**
    *
