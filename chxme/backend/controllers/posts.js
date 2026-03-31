@@ -1,3 +1,4 @@
+require('dotenv').config({ path: require('path').join(__dirname, '.env') });
 const Post = require("../models/post");
 const demoPosts = require("../demo/demo-posts");
 
