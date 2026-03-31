@@ -1,6 +1,6 @@
 // i will implement login und signup user can be able to create and login into the page
 const User = require("../models/user");
-const bcrypt = require("bcrypt"); // will be use for to encrypte the password
+const bcrypt = require("bcryptjs"); // will be use for to encrypte the password
 const jsonWebToken = require("jsonwebtoken");
 
 const express = require("express");

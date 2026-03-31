@@ -15,7 +15,7 @@ const BACKEND_URL = environment.apiURL + '/user/'; // global
  */
 export class AuthService {
   private userId?: string | null;
-  private tokenTimer!: NodeJS.Timer;
+  private tokenTimer: ReturnType<typeof setTimeout> | null = null;
   private isAthenticated = false;
   private userName?: string | null;
   private token?: string | null; // hold the token the after login will be in response
@@ -136,7 +136,10 @@ export class AuthService {
     this.isAthenticated = false;
     this.authStatusListener.next(false);
     this.authStatusUserListener.next(null);
+    if (this.tokenTimer) {
     clearTimeout(this.tokenTimer);
+    this.tokenTimer = null;
+    }
     this.clearAuthData();
     this.userId = null; // reset the user id
     this.router.navigate(['/']); // navigate to the home page an logout
