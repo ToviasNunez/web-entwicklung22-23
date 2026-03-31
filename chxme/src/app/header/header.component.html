@@ -1,0 +1,54 @@
+<mat-toolbar>
+  <div id="navigation" class="navigation">
+    <div class="post-logo">
+      <a mat-button routerLink="/" class="show-post">CHXME</a>
+    </div>
+
+    <input type="checkbox" id="btn-menu" />
+    <label for="btn-menu" class="fas fa-bars"></label>
+
+    <ul class="userName">
+      <li *ngIf="userIsAuthenticated" class="#">
+        <a href=""
+          ><span class="wave" style="color: var(--color-2)"> 👋🏾 &nbsp;</span
+          >{{ this.userName }}</a
+        >
+      </li>
+    </ul>
+
+    <ul class="navbar">
+      <li *ngIf="userIsAuthenticated" class="newpost">
+        <a
+          class="newpost"
+          mat-button
+          routerLink="/create"
+          routerLinkActive="active-link"
+          >New Post</a
+        >
+      </li>
+
+      <li *ngIf="!userIsAuthenticated" class="login">
+        <a
+          class="login"
+          mat-button
+          routerLink="/login"
+          routerLinkActive="active-link"
+          >Login</a
+        >
+      </li>
+      <li *ngIf="!userIsAuthenticated" class="#">
+        <a
+          class="singup"
+          routerLinkActive="active"
+          mat-button
+          routerLink="/signup"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Signup</a
+        >
+      </li>
+      <li *ngIf="userIsAuthenticated" class="btn-logout">
+        <a class="btn-logout" mat-button (click)="onLogout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

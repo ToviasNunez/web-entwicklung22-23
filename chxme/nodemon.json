@@ -1,0 +1,9 @@
+
+{
+
+"env":{
+  "MONGO_ATLAS_PW": "!Herminia44",
+  "JWT_KEY" : "security_is_very_importan"
+}
+
+}

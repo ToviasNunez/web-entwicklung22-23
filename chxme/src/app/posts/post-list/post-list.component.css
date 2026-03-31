@@ -1,0 +1,111 @@
+:host{
+  display: block;
+  margin-top: 1rem;
+
+}
+
+ .form-control{
+  border: none;
+  border: 1px solid var(--color-2);
+  padding: 20px;
+  margin-bottom: 20px;
+
+}
+
+
+.row{
+  display: flex;
+
+}
+.column{
+
+ flex: 33.33%;
+
+  padding: 15px;
+}
+
+.info-text{
+  text-align: left;
+}
+
+.row .column .author{
+  padding-top: 10px;
+  text-align: right;
+  color: var(--color-2);
+}
+.row .column .author .createdby{
+  font-size: 20px;
+
+text-transform: capitalize;
+margin-bottom: 15px;
+font-weight: 500;
+position: relative;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+
+
+
+
+.post-image img{
+  width: 100%;
+}
+mat-paginator{
+  margin-top: 50px;
+}
+
+ngb-rating{
+  color: var(--color-2);
+  margin-left: 15px;
+}
+
+
+.btn{
+
+  background-color: rgba(238, 115, 43, 0.082);
+  border-top: 1px solid var(--color-2);
+}
+
+.btn a{
+  margin-right: 20px;
+  font-size: 16px;
+  color: var(--color-2);
+  border: 1px solid var(--color-2);
+}
+
+.btn button{
+  margin-right: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: var(--color-1);
+  background-color: var(--color-2);
+}
+
+/*------- hover --------*/
+.btn a:hover{
+  font-size: 16px;
+  color: var(--color-3);
+  border: 1px solid var(--color-3);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn button:hover{
+  color: var(--color-1);
+  background-color: var(--color-3);
+  transition: all 0.2s ease-in-out
+}
+
+/*------- parte de pruebas --------*/
+.prueba{
+background-color: rgb(197, 195, 195);
+z-index: 99;
+}
+
+.prueba p{
+  margin-top: 15px;
+}
+
+

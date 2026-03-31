@@ -3,7 +3,7 @@
 ## 🚀 Demo
 
 <p align="center">
-	<a href="https://toviasnunez.github.io/web-entwicklung22-23/" target="_blank">
+	<a href="https://toviasnunez.github.io/chxme-fullstack-app/" target="_blank">
 		<img src="https://img.shields.io/badge/Click%20me-Demo-blue?style=for-the-badge&logo=github" alt="Live Demo" />
 	</a>
 </p>

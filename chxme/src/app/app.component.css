@@ -1,0 +1,22 @@
+
+
+header{
+  position: relative;
+  width: 100%;
+
+}
+
+main{
+  position: relative;
+  width: 70%;
+  margin: 100px auto 80px;
+
+}
+
+footer{
+  position: relative;
+  min-height: 30vh;
+}
+
+
+
