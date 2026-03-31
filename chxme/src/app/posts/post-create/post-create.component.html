@@ -9,7 +9,7 @@
           [value]="country"
           >{{ country }}</mat-option
         >
-        <mat-error *ngIf="form.get('country').invalide"
+        <mat-error *ngIf="form.get('country').invalid"
           >Please selected the country</mat-error
         >
       </mat-select>
@@ -24,7 +24,7 @@
         >
           {{ city.name }}</mat-option
         >
-        <mat-error *ngIf="form.get('city').invalide"
+        <mat-error *ngIf="form.get('city').invalid"
           >Please selected the city</mat-error
         >
       </mat-select>
@@ -38,7 +38,7 @@
           [value]="topic.name"
           >{{ topic.name }}</mat-option
         >
-        <mat-error *ngIf="form.get('topic').invalide"> </mat-error>
+        <mat-error *ngIf="form.get('topic').invalid"> </mat-error>
       </mat-select>
     </mat-form-field>
 
@@ -75,7 +75,7 @@
 <!-- subtitel-->
  <mat-form-field>
   <input matInput class="subtitel" type="text" formControlName="subtitel" placeholder="Subtitel">
-   <mat-error *ngIf="form.get('subtitel').invalide">
+   <mat-error *ngIf="form.get('subtitel').invalid">
         Please enter the content more than 3 character</mat-error
       >
  </mat-form-field>
@@ -89,7 +89,7 @@
         matInput
         rows="6"
       ></textarea>
-      <mat-error *ngIf="form.get('content').invalide">
+      <mat-error *ngIf="form.get('content').invalid">
         Please enter the content more than 3 character</mat-error
       >
     </mat-form-field>

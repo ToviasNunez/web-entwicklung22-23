@@ -37,10 +37,9 @@ exports.userLogin = (req, res, next) => {
       // console.log(user);
       // check if the user are reated
       if (!user) {
-        /** return res.status(401).json({
-           message: "Invalid authetication  credentials! by user",
-         }); */
-        return;
+        return res.status(401).json({
+          message: "Invalid authentication credentials!",
+        });
       }
       fetchedUser = user; // save the user value into avariable
       // compare the password to make sure that the user has used the corrected password

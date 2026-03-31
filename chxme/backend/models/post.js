@@ -4,16 +4,16 @@ const mongoose = require("mongoose");
 
 // this is the bluePrint that identified the post
 const postSchema = mongoose.Schema({
-  country: { type: String, require: true },
-  city: { type: String, require: true },
-  topic: { type: String, require: true },
-  rate: { type: Number, require: true },
-  imagePath: { type: String, require: true },
-  subtitel: { type: String, require: true },
-  content: { type: String, require: true },
-  date: { type: String, require: true },
-  creator: { type: mongoose.Schema.Types.ObjectId, ref: "User", require: true },
-  author: { type: mongoose.Schema.Types.String, ref: "User", require: true }, // ref allow to wich modul this id was stored
+  country: { type: String, required: true },
+  city: { type: String, required: true },
+  topic: { type: String, required: true },
+  rate: { type: Number, required: true },
+  imagePath: { type: String, required: true },
+  subtitel: { type: String, required: true },
+  content: { type: String, required: true },
+  date: { type: String, required: true },
+  creator: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  author: { type: String, required: true },
 });
 
 module.exports = mongoose.model("Post", postSchema);

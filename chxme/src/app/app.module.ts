@@ -42,6 +42,5 @@ import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
   ], // inject the interceptor in the auth service
   bootstrap: [AppComponent],
-  entryComponents: [ErrorComponent],
 })
 export class AppModule {}

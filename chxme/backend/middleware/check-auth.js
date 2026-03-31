@@ -5,7 +5,11 @@ const jsonWebToken = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
   try {
-    const token = req.headers.authorization.split(" ")[1]; // get the token that was create on the header
+    const authHeader = req.headers.authorization;
+    if (!authHeader) {
+      return res.status(401).json({ message: "You are not authenticated!" });
+    }
+    const token = authHeader.split(" ")[1]; // get the token that was create on the header
 
     // verified and decoded the token
     const decodedToken = jsonWebToken.verify(token, process.env.JWT_KEY);

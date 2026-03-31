@@ -113,3 +113,84 @@ This application belongs to the **Travel & Experience Sharing domain**, focusing
 Developed as part of a full-stack project and portfolio demonstration.
 
 ---
+
+## 📝 Software Description
+
+### 🖥️ Run the local backend server
+
+```bash
+npm run start:server
+```
+
+### 🖥️ Run the frontend server
+
+```bash
+ng serve
+```
+
+---
+
+## 🗄️ Backend Structure
+
+### 📂 controllers
+- **posts:** create, get, get by ID, update, delete post
+- **users:** create user, user login
+
+### 🛡️ middleware
+- **token:** import jsonwebtoken
+- **file:** MIME_TYPE_MAP, storage (multer)
+
+### 🗃️ models
+- **post.js:** postSchema (mongoose.Schema)
+- **user.js:** userSchema (mongoose.Schema)
+
+### 🚦 routes
+- **Post:** create, get, get by id, update, delete (token verification)
+- **User:** signup, login
+
+### ⚙️ app.js
+- Connect to mongoose
+- Handle image upload
+- Set headers
+- Export post/user routes
+
+### 📦 package.json
+- Deployment scripts
+
+### 🖥️ server.js
+- Start backend server
+
+---
+
+## 💻 Frontend Structure
+
+### 📁 app/
+- **🔐 auth:**
+  - 🔑 login: User login
+  - 📝 signup: User registration
+  - 🗝️ auth-data.model: Interface for user data
+  - 🛡️ auth-interceptor: HTTP auth token handling
+  - 🗺️ auth-routing: Routing for auth components
+  - 🚧 auth-guard: Route protection
+  - 📦 auth.module: Auth module
+  - ⚙️ auth.service: Auth logic (token, status, local storage, etc.)
+- **❗ error:** Error dialog handling
+- **🔻 footer:** Footer component
+- **🔺 header:** Header component
+- **📝 posts:**
+  - ✍️ post-create: Create/update post
+  - 📃 post-list: List posts
+  - 🗂️ post.model: Post interface
+  - 📦 posts.module: Posts module
+  - 🔄 posts.service: CRUD for posts
+- **🎨 angular-material.module:** Angular Material imports
+- **🗺️ app-routing.module:** Routing setup
+- **🧩 app.module:** Main app module
+- **❗ error-interceptor:** HTTP error handling
+
+### 🗂️ assets/
+- 📄 JSON local data
+
+---
+
+*Siehe README für weitere Details und Screenshots.*
