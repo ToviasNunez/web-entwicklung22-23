@@ -1,13 +1,17 @@
-
 # 🌍 TravelLens (Posts App)
 
 ## 🚀 Demo
 
-You can try the live demo here: [🌐 https://toviasnunez.github.io/web-entwicklung22-23/](https://toviasnunez.github.io/web-entwicklung22-23/)
+<p align="center">
+	<a href="https://toviasnunez.github.io/web-entwicklung22-23/" target="_blank">
+		<img src="https://img.shields.io/badge/Click%20me-Demo-blue?style=for-the-badge&logo=github" alt="Live Demo" />
+	</a>
+</p>
 
 This project includes a demo mode that allows the application to run without a database.
 
 👉 The demo showcases:
+
 * Example travel posts
 * UI and user experience
 * Core functionality without backend dependency
@@ -84,21 +88,6 @@ This application belongs to the **Travel & Experience Sharing domain**, focusing
 * Node.js
 * Express
 * MongoDB (in full mode)
-
----
-
-## 🚀 Demo
-
-
-You can try the live demo here: [🌐 https://toviasnunez.github.io/web-entwicklung22-23/](https://toviasnunez.github.io/web-entwicklung22-23/)
-
-This project includes a demo mode that allows the application to run without a database.
-
-👉 The demo showcases:
-
-* Example travel posts
-* UI and user experience
-* Core functionality without backend dependency
 
 ---
 
