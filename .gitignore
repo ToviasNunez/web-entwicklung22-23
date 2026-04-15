@@ -55,3 +55,6 @@ backend/.env
 backend/.DS_Store
 .env
 *.env
+*.bak.*
+
+*.bak.*
