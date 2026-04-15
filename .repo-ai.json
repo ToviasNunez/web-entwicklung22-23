@@ -1,0 +1,9 @@
+{
+  "templateVersion": "1.2.0",
+  "profile": "enterprise-default",
+  "pathRules": true,
+  "repositoryIdentity": {
+    "id": "357824e5-4e2a-487d-a7fe-d5886c091c60",
+    "title": "chxme-fullstack-app"
+  }
+}
