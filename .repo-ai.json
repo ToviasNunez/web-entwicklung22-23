@@ -5,5 +5,118 @@
   "repositoryIdentity": {
     "id": "357824e5-4e2a-487d-a7fe-d5886c091c60",
     "title": "chxme-fullstack-app"
+  },
+  "projectMetadata": {
+    "schemaVersion": "1.0.0",
+    "identity": {
+      "status": "active",
+      "year": "2026",
+      "featured": false,
+      "title": "TravelLens (chxme-fullstack-app)"
+    },
+    "classification": {
+      "domain": "Reiseerfahrungen teilen und entdecken (Webanwendung)",
+      "category": "Fullstack Webanwendung (Angular/Node.js/Express/MongoDB)",
+      "complexity": "mittel (SPA, REST-API, Auth, Demo-Modus)",
+      "scope": "Einzelprojekt, keine mobilen Apps, keine externen APIs"
+    },
+    "presentation": {
+      "href": "https://toviasnunez.github.io/chxme-fullstack-app/",
+      "previewLabel": "TravelLens Demo",
+      "actionLabel": "View Project",
+      "visualVariant": "default",
+      "cardSize": "medium"
+    },
+    "content": {
+      "description": "TravelLens ist eine Fullstack-Webanwendung zum Teilen, Bewerten und Entdecken von Reiseerfahrungen. Das System besteht aus einem Angular-Frontend (SPA) und einem Node.js/Express/MongoDB-Backend. Es bietet Authentifizierung, Post-Management (CRUD), einen Demo-Modus ohne Datenbank und einen AI-Governance-Layer. Die Kommunikation erfolgt über REST-APIs. Ziel ist es, strukturierte Reiseberichte und Tipps bereitzustellen.",
+      "tags": [
+        "Angular",
+        "Node.js",
+        "Express",
+        "MongoDB",
+        "REST API",
+        "SPA",
+        "JWT",
+        "Material",
+        "Bootstrap",
+        "Demo-Modus",
+        "AI-Governance"
+      ],
+      "engineeringFocus": [
+        "Frontend-Architektur (SPA)",
+        "Backend-API-Design",
+        "Authentifizierung (JWT)",
+        "Datei-Upload",
+        "Demo-Betrieb ohne Datenbank"
+      ],
+      "systemCharacteristics": [
+        "Modular",
+        "REST-basiert",
+        "Rollenbasiert",
+        "Demo-fähig",
+        "Dokumentations- und Governance-Layer"
+      ],
+      "blocks": [
+        {
+          "title": "Frontend",
+          "content": [
+            "Angular 15 SPA",
+            "Material UI, Bootstrap",
+            "Routing, Auth, Post-Module"
+          ]
+        },
+        {
+          "title": "Backend",
+          "content": [
+            "Node.js/Express API",
+            "Mongoose/MongoDB Atlas",
+            "JWT-Auth, File-Upload, Demo-Daten"
+          ]
+        },
+        {
+          "title": "Demo-Modus",
+          "content": [
+            "Betrieb ohne Datenbank",
+            "Statische Beispielposts"
+          ]
+        },
+        {
+          "title": "AI-Governance",
+          "content": [
+            "Governance- und Dokumentationsstruktur",
+            "Vorlagen, Scripts, keine Dockerfiles"
+          ]
+        }
+      ]
+    },
+    "publicSafe": {
+      "approved": false
+    },
+    "provenance": {
+      "sourceOfTruth": {
+        "primary": "docs/ARCHITECTURE.md",
+        "secondary": [
+          "docs/PROJECT_OVERVIEW.md",
+          "docs/SETUP.md",
+          "README.md"
+        ]
+      },
+      "sourceConfidence": "medium"
+    },
+    "maintenance": {
+      "lastUpdatedAt": "2026-04-15",
+      "lastUpdatedBy": "ai-initializer",
+      "reviewStatus": "valid"
+    },
+    "defaults": {
+      "emptyString": "Field not yet documented",
+      "emptyArray": "No documented evidence or not applicable",
+      "false": "Disabled or not approved by default",
+      "sourceConfidence": {
+        "low": "Limited or partial documentation evidence",
+        "medium": "Consistent documentation across multiple sources",
+        "high": "Strong, validated and reviewed documentation"
+      }
+    }
   }
 }
